@@ -24,6 +24,15 @@ lvim.plugins = {
 
 local lspconfig = require('lspconfig')
 local configs = require('lspconfig/configs')
+
+require 'lspconfig'.cssmodules_ls.setup {
+  init_options = {
+    camelCase = 'dashes',
+  },
+}
+
+
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -45,15 +54,6 @@ lspconfig.emmet_ls.setup({
 require('nvim-ts-autotag').setup({
   filetypes = { "html", "javascriptreact", "typescript", "typescriptreact", "javascript" },
 })
-
---  local formatters = require "lvim.lsp.null-ls.formatters"
---  formatters.setup {
---    {
---      command = "prettierd",
---      filetypes = { "html", "scss", "css", "javascript", "typescriptreact", "typescript" },
---    },
---  }
-
 
 
 
