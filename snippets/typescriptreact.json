@@ -379,6 +379,10 @@
     "prefix": "fan",
     "body": "function (${1:arguments}) {${0}}"
   },
+  "arrow function": {
+    "prefix": "af",
+    "body": "(${1:arguments}) => ${2:statement}"
+  },
   "named function": {
     "prefix": "fn",
     "body": "function ${1:name} (${2:arguments}) {\n\t${0}\n}"
@@ -398,10 +402,6 @@
   "async immediately-invoked function expression": {
     "prefix": "aiife",
     "body": ";(async (${1:arguments}) => {\n\t${0}\n})(${2})"
-  },
-  "arrow function": {
-    "prefix": "af",
-    "body": "(${1:arguments}) => ${2:statement}"
   },
   "arrow function with destructuring": {
     "prefix": "fd",
