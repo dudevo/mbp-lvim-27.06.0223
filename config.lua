@@ -23,20 +23,16 @@ lvim.plugins = {
 }
 
 local lspconfig = require('lspconfig')
-local configs = require('lspconfig/configs')
-
-require 'lspconfig'.cssmodules_ls.setup {
-  init_options = {
-    camelCase = 'dashes',
-  },
-}
-
-
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
+lspconfig.cssmodules_ls.setup {
+  filetypes = { "typescriptreact", "javascriptreact" },
+  init_options = {
+    camelCase = 'dashes',
+  },
+}
 
 lspconfig.emmet_ls.setup({
   -- on_attach = on_attach,
@@ -51,11 +47,12 @@ lspconfig.emmet_ls.setup({
     },
   }
 })
+
+lspconfig.angularls.setup({})
+
 require('nvim-ts-autotag').setup({
   filetypes = { "html", "javascriptreact", "typescript", "typescriptreact", "javascript" },
 })
-
-
 
 lvim.builtin.telescope.defaults.file_ignore_patterns = {
   ".git/",
@@ -111,7 +108,6 @@ lvim.builtin.telescope.defaults.file_ignore_patterns = {
   "%.tar.gz",
 }
 
-
 local status_ok, surround = pcall(require, "nvim-surround")
 if not status_ok then
   return
@@ -132,6 +128,17 @@ surround.setup {
   },
 }
 
+local formatters = require "lvim.lsp.null-ls.formatters"
+
+-- reload('user.lsp')
+
 vim.cmd [[nmap <leader>' siw']]
 
 lvim.format_on_save.enabled = true
+-- lvim.format_on_save = {
+--   enabled = true,
+--   pattern = "*.lua,*.js,*.ts,*.tsx"
+-- }
+formatters.setup {
+  { command = "prettierd", filetypes = { "css", "scss" }, },
+}
