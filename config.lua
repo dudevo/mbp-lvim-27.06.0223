@@ -3,6 +3,7 @@ lvim.plugins = {
     "pocco81/auto-save.nvim",
   },
   { "windwp/nvim-ts-autotag", event = "VeryLazy" },
+  { "mattkubej/jest.nvim" },
   { "kylechui/nvim-surround" },
   {
     "codota/tabnine-nvim",
