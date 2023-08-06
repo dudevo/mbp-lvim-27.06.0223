@@ -1,28 +1,104 @@
 {
+  "Node callback": {
+    "prefix": "cb",
+    "body": "function (err, ${1:value}) {\n\tif (err) throw err\n\t${0}\n}"
+  },
+  "process.env": {
+    "prefix": "pe",
+    "body": "process.env"
+  },
+  "Promise.all": {
+    "prefix": "pa",
+    "body": "Promise.all(${1:value})"
+  },
+  "console.log": {
+    "prefix": "cl",
+    "body": "console.log(${0})"
+  },
+  "console.error": {
+    "prefix": "ce",
+    "body": "console.error(${0})"
+  },
+  "Promise.resolve": {
+    "prefix": "prs",
+    "body": "Promise.resolve(${1:value})"
+  },
+  "Promise.reject": {
+    "prefix": "prj",
+    "body": "Promise.reject(${1:value})"
+  },
+  "Promise": {
+    "prefix": "p",
+    "body": "Promise"
+  },
+  "new Promise": {
+    "prefix": "np",
+    "body": "new Promise((resolve, reject) => {\n\t${0}\n})"
+  },
+  "Promise.then": {
+    "prefix": "pt",
+    "body": "${1:promise}.then((${2:value}) => {\n\t${0}\n})"
+  },
+  "Promise.catch": {
+    "prefix": "pc",
+    "body": "${1:promise}.catch(error => {\n\t${0}\n})"
+  },
+  "try/catch": {
+    "prefix": "tc",
+    "body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n}"
+  },
+  "try/finally": {
+    "prefix": "tf",
+    "body": "try {\n\t${0}\n} finally {\n\t\n}"
+  },
+  "try/catch/finally": {
+    "prefix": "tcf",
+    "body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n} finally {\n\t\n}"
+  },
   "Constructor": {
     "prefix": "ctor",
-    "body": [
-      "/**",
-      " *",
-      " */",
-      "constructor() {",
-      "\tsuper();",
-      "\t$0",
-      "}"
-    ],
+    "body": ["/**", " *", " */", "constructor() {", "\tsuper();", "\t$0", "}"],
     "description": "Constructor"
   },
   "arrow function": {
     "prefix": "af",
     "body": "(${1:arguments}) => ${2:statement}"
   },
+  "reduce": {
+    "prefix": "reduce",
+    "body": "${1:iterable}.reduce((${2:previous}, ${3:current}) => {\n\t${0}\n}${4:, initial})"
+  },
+  "filter": {
+    "prefix": "filter",
+    "body": "${1:iterable}.filter((${2:item}) => {\n\t${0}\n})"
+  },
+  "find": {
+    "prefix": "find",
+    "body": "${1:iterable}.find((${2:item}) => {\n\t${0}\n})"
+  },
   "async arrow function": {
     "prefix": "aaf",
     "body": "async (${1:arguments}) => ${2:statement}"
   },
+  "let statement": {
+    "prefix": "l",
+    "body": "let ${1:name}"
+  },
+  "const statement": {
+    "prefix": "c",
+    "body": "const ${1:name}"
+  },
   "const arrow function assignment": {
     "prefix": "cf",
     "body": "const ${1:name} = (${2:arguments}) => {\n\treturn ${0}\n}"
+  },
+  "public method": {
+    "prefix": "pum",
+    "body": "public ${1:name} (${2:arguments}): ${3:void} {\n\treturn ${0}\n}"
+  },
+  "private method": {
+    "prefix": "prm",
+    "body": "private ${1:name} (${2:arguments}): ${3:void} {\n\treturn ${0}\n}"
   },
   "const async arrow function assignment": {
     "prefix": "acf",
@@ -41,11 +117,7 @@
   },
   "Interface Definition": {
     "prefix": "iface",
-    "body": [
-      "interface ${1:name} {",
-      "\t$0",
-      "}"
-    ],
+    "body": ["interface ${1:name} {", "\t$0", "}"],
     "description": "Interface Definition"
   },
   "Property getter": {
@@ -82,11 +154,7 @@
   },
   "For-Each Loop using =>": {
     "prefix": "foreach =>",
-    "body": [
-      "${1:array}.forEach(${2:element} => {",
-      "\t$0",
-      "});"
-    ],
+    "body": ["${1:array}.forEach(${2:element} => {", "\t$0", "});"],
     "description": "For-Each Loop using =>"
   },
   "For-In Loop": {
@@ -103,38 +171,22 @@
   },
   "For-Of Loop": {
     "prefix": "forof",
-    "body": [
-      "for (const ${1:iterator} of ${2:object}) {",
-      "\t$0",
-      "}"
-    ],
+    "body": ["for (const ${1:iterator} of ${2:object}) {", "\t$0", "}"],
     "description": "For-Of Loop"
   },
   "If Statement": {
     "prefix": "if",
-    "body": [
-      "if (${1:condition}) {",
-      "\t$0",
-      "}"
-    ],
+    "body": ["if (${1:condition}) {", "\t$0", "}"],
     "description": "If Statement"
   },
   "If-Else Statement": {
     "prefix": "ifelse",
-    "body": [
-      "if (${1:condition}) {",
-      "\t$0",
-      "} else {",
-      "\t",
-      "}"
-    ],
+    "body": ["if (${1:condition}) {", "\t$0", "} else {", "\t", "}"],
     "description": "If-Else Statement"
   },
   "New Statement": {
     "prefix": "new",
-    "body": [
-      "const ${1:name} = new ${2:type}(${3:arguments});$0"
-    ],
+    "body": ["const ${1:name} = new ${2:type}(${3:arguments});$0"],
     "description": "New Statement"
   },
   "Switch Statement": {
@@ -153,29 +205,17 @@
   },
   "While Statement": {
     "prefix": "while",
-    "body": [
-      "while (${1:condition}) {",
-      "\t$0",
-      "}"
-    ],
+    "body": ["while (${1:condition}) {", "\t$0", "}"],
     "description": "While Statement"
   },
   "Do-While Statement": {
     "prefix": "dowhile",
-    "body": [
-      "do {",
-      "\t$0",
-      "} while (${1:condition});"
-    ],
+    "body": ["do {", "\t$0", "} while (${1:condition});"],
     "description": "Do-While Statement"
   },
   "Set Timeout Function": {
     "prefix": "settimeout",
-    "body": [
-      "setTimeout(() => {",
-      "\t$0",
-      "}, ${1:timeout});"
-    ],
+    "body": ["setTimeout(() => {", "\t$0", "}, ${1:timeout});"],
     "description": "Set Timeout Function"
   },
   "Angular Component": {
@@ -267,9 +307,7 @@
   "Angular Default Route Path": {
     "prefix": "a-route-path-default",
     "description": "Angular default route path",
-    "body": [
-      "{ path: '', pathMatch: 'full', redirectTo: '${1:path}' },$0"
-    ]
+    "body": ["{ path: '', pathMatch: 'full', redirectTo: '${1:path}' },$0"]
   },
   "Angular Route Path with Children": {
     "prefix": "a-route-path-with-children",
@@ -287,16 +325,12 @@
   "Angular 404 Route Path": {
     "prefix": "a-route-path-404",
     "description": "Angular 404 route path",
-    "body": [
-      "{ path: '**', component: ${1:PathNotFoundComponent} },$0"
-    ]
+    "body": ["{ path: '**', component: ${1:PathNotFoundComponent} },$0"]
   },
   "Angular Eager Route Path": {
     "prefix": "a-route-path-eager",
     "description": "Angular eager route path",
-    "body": [
-      "{ path: '${1:path}', component: ${2:Name}Component },$0"
-    ]
+    "body": ["{ path: '${1:path}', component: ${2:Name}Component },$0"]
   },
   "Angular Lazy Route Path": {
     "prefix": "a-route-path-lazy",
@@ -321,9 +355,7 @@
   "HttpClient.get": {
     "prefix": "a-httpclient-get",
     "description": "Angular HttpClient.get",
-    "body": [
-      "return this.httpClient.get('${1:url}');$0"
-    ]
+    "body": ["return this.httpClient.get('${1:url}');$0"]
   },
   "Angular HttpClient Service": {
     "prefix": "a-service-httpclient",
@@ -404,9 +436,7 @@
   },
   "Output Event": {
     "prefix": "a-output-event",
-    "body": [
-      "@Output() ${1:eventName} = new EventEmitter<${2:eventType}>();"
-    ],
+    "body": ["@Output() ${1:eventName} = new EventEmitter<${2:eventType}>();"],
     "description": "Angular @Output event and emitter"
   },
   "Subscribe": {
@@ -655,18 +685,12 @@
   "RxJs Import": {
     "prefix": "a-rxjs-import",
     "description": "RxJs import",
-    "body": [
-      "import { ${1:Observable} } from 'rxjs';",
-      "$0"
-    ]
+    "body": ["import { ${1:Observable} } from 'rxjs';", "$0"]
   },
   "RxJs Operator Import": {
     "prefix": "a-rxjs-operator-import",
     "description": "RxJs import",
-    "body": [
-      "import { ${1:map} } from 'rxjs/operators';",
-      "$0"
-    ]
+    "body": ["import { ${1:map} } from 'rxjs/operators';", "$0"]
   },
   "Angular Resolver": {
     "prefix": "a-resolver",
@@ -783,9 +807,7 @@
   "NgRx Data Import Entity Data Module": {
     "prefix": "a-ngrx-data-entity-data-module-import",
     "description": "Import NgRx Entity Data Module",
-    "body": [
-      "EntityDataModule.forRoot(${1:entityConfig}),"
-    ]
+    "body": ["EntityDataModule.forRoot(${1:entityConfig}),"]
   },
   "NgRx Data Entity Metadata": {
     "prefix": "a-ngrx-data-entity-metadata",
