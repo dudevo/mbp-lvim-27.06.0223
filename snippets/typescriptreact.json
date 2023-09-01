@@ -623,5 +623,26 @@
       "  )",
       "}"
     ]
+  },
+  "Typescript React native component with props": {
+    "prefix": "rnp",
+    "body": [
+      "import { FC } from 'react'",
+      "import {StyleSheet, View} from 'react-native';",
+      "",
+      "interface Props {}",
+      "",
+      "export const ${TM_FILENAME_BASE}: FC<Props> = (props) => {",
+      "  return (",
+      "    <View style={styles.container}>",
+      "     ${3:$TM_FILENAME_BASE}",
+      "    </View>",
+      "  )",
+      "}",
+      "",
+      "const styles = StyleSheet.create({",
+      "container: {}",
+      "})"
+    ]
   }
 }

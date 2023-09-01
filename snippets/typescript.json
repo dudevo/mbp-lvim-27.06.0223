@@ -31,6 +31,10 @@
     "prefix": "p",
     "body": "Promise"
   },
+  "import module": {
+    "prefix": "im",
+    "body": "import ${2:*} from '${1:module}'"
+  },
   "new Promise": {
     "prefix": "np",
     "body": "new Promise((resolve, reject) => {\n\t${0}\n})"
