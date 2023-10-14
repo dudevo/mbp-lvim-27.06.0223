@@ -51,4 +51,5 @@ lvim.builtin.telescope.defaults.file_ignore_patterns = {
   "%.flac",
   "%.tar.gz",
 }
+-- lvim.builtin.terminal.open_mapping = "<leader>t"
 lvim.format_on_save.enabled = true

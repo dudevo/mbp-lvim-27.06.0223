@@ -4,6 +4,8 @@ lvim.plugins = {
   },
   { "windwp/nvim-ts-autotag", event = "VeryLazy" },
   { "mg979/vim-visual-multi" },
+  -- { "stevearc/conform.nvim" },
+  -- { "mfussenegger/nvim-lint" },
   {
     'Wansmer/treesj',
     keys = { '<space>m', '<space>j', '<space>s' },
@@ -41,5 +43,14 @@ lvim.plugins = {
         log_file_path = nil, -- absolute path to Tabnine log file
       })
     end
+  },
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   },
 }

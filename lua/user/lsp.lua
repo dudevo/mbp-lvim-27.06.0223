@@ -44,5 +44,10 @@ formatters.setup({
       "graphql",
       "json",
     }
-  },
+  }, {
+  name = "black",
+},
 })
+
+-- local linters = require "lvim.lsp.null-ls.linters"
+-- linters.setup { { command = "flake8", filetypes = { "python" } } }
