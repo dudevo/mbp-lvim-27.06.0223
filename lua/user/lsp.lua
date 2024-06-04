@@ -1,8 +1,9 @@
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.nvimtree.setup.view.width = 40
+lvim.builtin.nvimtree.setup.view.width = 50
 
 local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 
 lspconfig.cssmodules_ls.setup {
   filetypes = { "typescriptreact", "javascriptreact" },
@@ -10,6 +11,7 @@ lspconfig.cssmodules_ls.setup {
     camelCase = 'dashes',
   },
 }
+
 
 lspconfig.emmet_ls.setup({
   -- on_attach = on_attach,
@@ -39,15 +41,13 @@ formatters.setup({
       "typescriptreact",
       "css",
       "scss",
-      -- "html",
+      "html",
       -- "yaml",
       "graphql",
       "json",
     }
-  }, {
-  name = "black",
-},
+  }
 })
 
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup { { command = "flake8", filetypes = { "python" } } }
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup { --[[ { command = "flake8", filetypes = { "python" } } ]] }

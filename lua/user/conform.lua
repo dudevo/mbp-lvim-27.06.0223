@@ -2,13 +2,13 @@ require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
     -- Conform will run multiple formatters sequentially
-    python = { "isort", "black" },
+    -- python = { "isort", "black" },
     -- Use a sub-list to run only the first available formatter
     javascript = { { "prettier" } },
     typescriptreact = { { "prettier" } },
     javascriptreact = { { "prettier" } },
     typescript = { { "prettier" } },
-    html = { { "prettierd" } },
+    html = { { "prettier" } },
     css = { { "prettier" } },
     scss = { { "prettier" } },
   },
