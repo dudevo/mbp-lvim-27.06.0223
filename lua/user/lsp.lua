@@ -1,6 +1,3 @@
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.nvimtree.setup.view.width = 50
-
 local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -27,7 +24,7 @@ lspconfig.emmet_ls.setup({
   }
 })
 
-lspconfig.angularls.setup({})
+-- lspconfig.angularls.setup({})
 
 
 local formatters = require "lvim.lsp.null-ls.formatters"
@@ -35,8 +32,8 @@ formatters.setup({
   {
     command = "prettierd",
     filetypes = {
-      -- "javascript",
-      -- "javascriptreact",
+      "javascript",
+      "javascriptreact",
       "typescript",
       "typescriptreact",
       "css",
