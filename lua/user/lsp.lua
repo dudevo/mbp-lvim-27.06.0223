@@ -24,9 +24,6 @@ lspconfig.emmet_ls.setup({
   }
 })
 
--- lspconfig.angularls.setup({})
-
-
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup({
   {

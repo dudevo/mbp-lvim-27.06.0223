@@ -100,6 +100,10 @@
     "prefix": "pum",
     "body": "public ${1:name} (${2:arguments}): ${3:void} {\n\treturn ${0}\n}"
   },
+  "public method": {
+    "prefix": "met",
+    "body": "${1:name} () {\n\treturn ${0}\n}"
+  },
   "private method": {
     "prefix": "prm",
     "body": "private ${1:name} (${2:arguments}): ${3:void} {\n\treturn ${0}\n}"

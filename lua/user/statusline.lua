@@ -1,0 +1,19 @@
+-- vim.tbl_extend('keep', lvim.builtin.lualine.sections.lualine_c, { "treesitter" })
+-- lvim.builtin.lualine.sections.lualine_c = { "treesitter" }
+
+-- lvim.builtin.lualine.sections = {
+--   lualine_a = { "mode" },
+--   lualine_b = { "filename" },
+--   lualine_c = { "filename" },
+--   lualine_x = { "diagnostics" },
+--   lualine_y = {},
+--   lualine_z = { "location", "progress" }
+-- }
+-- lvim.builtin.lualine.inactive_sections = {
+--   lualine_a = {},
+--   lualine_b = {},
+--   lualine_c = {},
+--   lualine_x = {},
+--   lualine_y = {},
+--   lualine_z = {}
+-- }

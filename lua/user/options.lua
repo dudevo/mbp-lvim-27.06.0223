@@ -4,7 +4,7 @@ lvim.format_on_save.enabled = true
 lvim.transparent_window = true
 lvim.opt.termguicolors = true
 
-lvim.builtin.telescope.defaults.file_ignore_patterns = {
+vim.builtin.telescope.defaults.file_ignore_patterns = {
   ".git/",
   "target/",
   "docs/",
