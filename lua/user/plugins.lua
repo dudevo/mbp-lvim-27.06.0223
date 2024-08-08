@@ -4,8 +4,8 @@ lvim.plugins = {
   },
   { "windwp/nvim-ts-autotag", event = "VeryLazy" },
   { "mg979/vim-visual-multi" },
+  --  -- { "mfussenegger/nvim-lint" },,
   -- { "stevearc/conform.nvim" },
-  -- { "mfussenegger/nvim-lint" },
   {
     'Wansmer/treesj',
     keys = { '<space>m', '<space>j', '<space>s' },
@@ -22,6 +22,7 @@ lvim.plugins = {
     config = true,
   },
   { "nvim-treesitter/nvim-treesitter-angular" },
+  { 'wakatime/vim-wakatime',                  lazy = false },
   {
     "folke/trouble.nvim",
     opts = {}, -- for default options, refer to the configuration section for custom setup.
@@ -90,6 +91,14 @@ lvim.plugins = {
           filter = { event = "notify", find = "No information available" },
           opts = { skip = true },
         },
+        {
+          filter = {
+            event = "msg_show",
+            kind = "",
+            find = "New file",
+          },
+          opts = { skip = true },
+        }
       },
       presets = {
         lsp_doc_border = true,
@@ -99,17 +108,11 @@ lvim.plugins = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     },
-  }, -- Lua
-  -- {
-  --   "jackMort/ChatGPT.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("chatgpt").setup()
-  --   end,
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-telescope/telescope.nvim"
-  --   }
-  -- },
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    event = "VeryLazy",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {}
+  }
 }
