@@ -11,3 +11,10 @@ vim.cmd('syntax enable')
 vim.cmd [[
   autocmd FileType html syntax on
 ]]
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  pattern = { "*.js", "*.ts" },
+  callback = function()
+    vim.lsp.buf.refresh()
+  end,
+})

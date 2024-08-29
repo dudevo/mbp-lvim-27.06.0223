@@ -22,7 +22,7 @@ lvim.plugins = {
     config = true,
   },
   { "nvim-treesitter/nvim-treesitter-angular" },
-  { 'wakatime/vim-wakatime',                  lazy = false },
+  -- { 'wakatime/vim-wakatime',                  lazy = false },
   {
     "folke/trouble.nvim",
     opts = {}, -- for default options, refer to the configuration section for custom setup.
@@ -81,7 +81,7 @@ lvim.plugins = {
       })
     end
   },
-  { "norcalli/nvim-colorizer.lua" },
+  -- { "norcalli/nvim-colorizer.lua" },
   {
     "folke/noice.nvim",
     event = "VeryLazy",

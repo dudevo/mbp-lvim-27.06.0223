@@ -859,5 +859,10 @@
       "  return ${2:name}${5:.id};$0",
       "}"
     ]
+  },
+  "Multiline Comment": {
+    "prefix": "mlc",
+    "description": "Multiline comment block",
+    "body": ["/**", " * $1", " */"]
   }
 }

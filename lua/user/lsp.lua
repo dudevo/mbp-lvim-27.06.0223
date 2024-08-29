@@ -38,7 +38,7 @@ lspconfig.angularls.setup({})
 --   }
 -- }
 
--- Auto-restart language server on crash
+-- --Auto-restart language server on crash
 -- vim.api.nvim_command('autocmd BufWritePost * lua require("lspconfig").angularls.setup{}')
 
 lspconfig.emmet_ls.setup({
